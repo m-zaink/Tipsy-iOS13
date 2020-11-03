@@ -17,6 +17,19 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var splitCountLabel: UILabel!
     
+    var splitCalculatorBrain: SplitCalculatorBrain!
+    
+    override func viewDidLoad() {
+        splitCalculatorBrain = SplitCalculatorBrain(
+            splitSummary: SplitSummary(
+                billAmount: 0.0,
+                tipPercentage: 10.0,
+                headCount: 2
+            )
+        )
+    }
+
+    
     @IBAction func onCalculateButtonPressed(_ sender: UIButton) {
         guard let enteredAmountAsString = billAmountTextField.text, !enteredAmountAsString.isEmpty else {
             let alert = createUIAlertForEmptyBillTotal()
@@ -24,13 +37,16 @@ class HomeViewController: UIViewController {
             return
         }
         
-        guard  let enteredAmount = Float(enteredAmountAsString) else {
+        guard  let enteredBillAmount = Float(enteredAmountAsString) else {
             let alert = createUIAlertForIncorrectBillTotal()
             self.present(alert, animated: true, completion: nil)
             return
         }
         
-        print(enteredAmount)
+        splitCalculatorBrain.billAmount = Double(enteredBillAmount)
+        
+        
+        performSegue(withIdentifier: "resultSegue", sender: self)
     }
     
     @IBAction func onTapGestureRecognized(_ sender: UITapGestureRecognizer) {
@@ -42,7 +58,7 @@ class HomeViewController: UIViewController {
             return
         }
         
-        guard let tipPercentage = Double(currentTitle.replacingOccurrences(of: "%", with: "")) else {
+        guard let tipPercentage = Double(currentTitle.toTip) else {
             return
         }
         
@@ -50,11 +66,27 @@ class HomeViewController: UIViewController {
         
         sender.isSelected = true
         
-        print(tipPercentage)
+        splitCalculatorBrain.tipPercentage = tipPercentage
     }
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
-        splitCountLabel.text = String(format: "%.0f", sender.value)
+        let headCount = Int(sender.value.rounded())
+        
+        splitCountLabel.text = String(headCount)
+        
+        splitCalculatorBrain.headCount = headCount
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "resultSegue" {
+            if let resultViewController = segue.destination as? ResultViewController {
+                resultViewController.splitSummary = SplitSummary(
+                    billAmount: splitCalculatorBrain.billAmount,
+                    tipPercentage: splitCalculatorBrain.tipPercentage,
+                    headCount: splitCalculatorBrain.headCount
+                )
+            }
+        }
     }
 }
 

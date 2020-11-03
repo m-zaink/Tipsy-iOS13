@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A8F07FE25510E62003307E7 /* SplitSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F07FD25510E62003307E7 /* SplitSummary.swift */; };
+		0A8F080225510F49003307E7 /* SplitCalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F080125510F49003307E7 /* SplitCalculatorBrain.swift */; };
+		0A8F0806255111A0003307E7 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F0805255111A0003307E7 /* ResultViewController.swift */; };
+		0A8F080B2551122D003307E7 /* ExtensionDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A8F080A2551122D003307E7 /* ExtensionDouble.swift */; };
 		ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689522326708D006D4E2B /* AppDelegate.swift */; };
 		ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689542326708D006D4E2B /* SceneDelegate.swift */; };
 		ADB689572326708D006D4E2B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB689562326708D006D4E2B /* HomeViewController.swift */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A8F07FD25510E62003307E7 /* SplitSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitSummary.swift; sourceTree = "<group>"; };
+		0A8F080125510F49003307E7 /* SplitCalculatorBrain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitCalculatorBrain.swift; sourceTree = "<group>"; };
+		0A8F0805255111A0003307E7 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		0A8F080A2551122D003307E7 /* ExtensionDouble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDouble.swift; sourceTree = "<group>"; };
 		ADB6894F2326708D006D4E2B /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADB689522326708D006D4E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADB689542326708D006D4E2B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,9 +45,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A8F07FC25510E47003307E7 /* SplitCalculatorBrain */ = {
+			isa = PBXGroup;
+			children = (
+				0A8F07FD25510E62003307E7 /* SplitSummary.swift */,
+				0A8F080125510F49003307E7 /* SplitCalculatorBrain.swift */,
+			);
+			path = SplitCalculatorBrain;
+			sourceTree = "<group>";
+		};
+		0A8F0808255111FE003307E7 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0A8F080A2551122D003307E7 /* ExtensionDouble.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		0ABD3A9C255072C300809A1D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A8F07FC25510E47003307E7 /* SplitCalculatorBrain */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -56,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				ADB689562326708D006D4E2B /* HomeViewController.swift */,
+				0A8F0805255111A0003307E7 /* ResultViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -81,6 +108,7 @@
 			children = (
 				ADB689522326708D006D4E2B /* AppDelegate.swift */,
 				ADB689542326708D006D4E2B /* SceneDelegate.swift */,
+				0A8F0808255111FE003307E7 /* Utilities */,
 				0ABD3A9C255072C300809A1D /* Models */,
 				0ABD3A9E2550734600809A1D /* Views */,
 				0ABD3A9F2550734B00809A1D /* Controllers */,
@@ -164,7 +192,11 @@
 			files = (
 				ADB689572326708D006D4E2B /* HomeViewController.swift in Sources */,
 				ADB689532326708D006D4E2B /* AppDelegate.swift in Sources */,
+				0A8F080B2551122D003307E7 /* ExtensionDouble.swift in Sources */,
 				ADB689552326708D006D4E2B /* SceneDelegate.swift in Sources */,
+				0A8F07FE25510E62003307E7 /* SplitSummary.swift in Sources */,
+				0A8F080225510F49003307E7 /* SplitCalculatorBrain.swift in Sources */,
+				0A8F0806255111A0003307E7 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
